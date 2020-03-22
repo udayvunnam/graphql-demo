@@ -1,88 +1,86 @@
-import React from "react";
-import Flip from "./components/Flip";
-import "./styles.css";
+import React from 'react';
+import Flip from './components/Flip';
+import './styles.css';
 
 const initialData = [
   {
-    type: "Mammal",
+    type: 'Mammal',
     img:
-      "https://res.cloudinary.com/codebeast/image/upload/c_fill,h_400,q_50,w_400/v1584867791/Animal%20Classes/view-of-elephant-in-water-247431.jpg",
+      'https://res.cloudinary.com/codebeast/image/upload/c_fill,h_400,q_50,w_400/v1584867791/Animal%20Classes/view-of-elephant-in-water-247431.jpg',
     animals: [
       {
-        name: "Dog"
+        name: 'Dog'
       },
       {
-        name: "Horse"
+        name: 'Horse'
       },
       {
-        name: "Antelope"
+        name: 'Antelope'
       },
       {
-        name: "Cat"
+        name: 'Cat'
       },
       {
-        name: "Tiger"
+        name: 'Tiger'
       },
       {
-        name: "Zebra"
+        name: 'Zebra'
       },
       {
-        name: "Lion"
+        name: 'Lion'
       },
       {
-        name: "Panter"
+        name: 'Panter'
       }
     ]
   },
   {
-    type: "Bird",
+    type: 'Bird',
     img:
-      "https://res.cloudinary.com/codebeast/image/upload/c_fill,h_400,q_50,w_400/v1584867879/Animal%20Classes/shallow-focus-photography-of-green-yellow-and-blue-bird-2190209.jpg",
+      'https://res.cloudinary.com/codebeast/image/upload/c_fill,h_400,q_50,w_400/v1584867879/Animal%20Classes/shallow-focus-photography-of-green-yellow-and-blue-bird-2190209.jpg',
     animals: [
       {
-        name: "Chicken"
+        name: 'Chicken'
       },
       {
-        name: "Duck"
+        name: 'Duck'
       }
     ]
   },
   {
-    type: "Reptile",
+    type: 'Reptile',
     img:
-      "https://res.cloudinary.com/codebeast/image/upload/c_fill,h_400,q_50,w_400/v1584868136/Animal%20Classes/photo-of-a-snake-3280908.jpg",
+      'https://res.cloudinary.com/codebeast/image/upload/c_fill,h_400,q_50,w_400/v1584868136/Animal%20Classes/photo-of-a-snake-3280908.jpg',
     animals: [
       {
-        name: "Snake"
+        name: 'Snake'
       }
     ]
   }
 ];
 
 export default function App() {
-  const [classes, setClasses] = React.useState(initialData);
+  const [flipped, flip] = React.useState('');
+
   return (
     <div className="App">
       <main>
-        {classes.map(classData => (
+        {initialData.map(classData => (
           <Flip
             key={classData.type}
             flip={() => {
-              setClasses(
-                classes.map(c => {
-                  if (c.type === classData.type) {
-                    c.flipped = !c.flipped;
-                    return c;
-                  }
-                  return c;
-                })
-              );
+              flip(classData.type);
             }}
             Front={() => (
               <div
-                style={{ backgroundImage: `url(${classData.img})`, height: "100%" }}
+                style={{
+                  backgroundImage: `url(${classData.img})`,
+                  height: '100%'
+                }}
               >
-                <h2 className="title">{classData.type}</h2>
+                <h2 className="title">
+                  {classData.type}
+                </h2>
               </div>
             )}
             Back={() => (
@@ -94,7 +92,7 @@ export default function App() {
                 ))}
               </div>
             )}
-            flipped={classData.flipped}
+            flipped={classData.type === flipped}
           />
         ))}
       </main>

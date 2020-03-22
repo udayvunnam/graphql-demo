@@ -30,6 +30,7 @@ main {
   cursor: pointer;
   will-change: transform, opacity;
   border-radius: 10px;
+  overflow: scroll;
 }
 
 .Flip.back {
