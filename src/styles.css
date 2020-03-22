@@ -1,0 +1,75 @@
+.App {
+  font-family: sans-serif;
+  background-color: #e1e1e1;
+  min-height: 100vh;
+  padding: 50px;
+  display: grid;
+  justify-content: center;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 400px 400px 400px;
+  grid-template-rows: 400px 400px 400px;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+
+.Flip_wrapper {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+.Flip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 400px;
+  cursor: pointer;
+  will-change: transform, opacity;
+  border-radius: 10px;
+}
+
+.Flip.back {
+  background-color: #f8f8f8;
+  padding: 20px;
+}
+
+.Flip * {
+  border-radius: 10px;
+}
+
+.Flip__overlay {
+  position: absolute;
+  background-color: #000;
+  top: 0;
+  left: 0;
+  opacity: 0.4;
+  height: 100%;
+  width: 100%;
+}
+
+.List__item {
+  background: #ffffff;
+  box-shadow: 0px 4px 25px rgba(151, 143, 175, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 8px;
+  float: left;
+}
+
+.List {
+  height: 400px;
+  overflow: hidden;
+}
+
+.title {
+  font-size: 28px;
+  color: #f8f8f8;
+  line-height: 400px;
+  text-align: center;
+  position: relative;
+  z-index: 1000;
+}
