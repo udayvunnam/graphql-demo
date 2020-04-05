@@ -1,4 +1,4 @@
-## Intro to GraphQL API for Frontend Devs Workshop Starter Code
+## Intro to GraphQL API for Frontend Devs  Starter Code
 
 - Clone
 - `npm install`
